@@ -1774,7 +1774,7 @@ export class PostgresQueryRunner extends BaseQueryRunner implements QueryRunner 
      * Builds drop view sql.
      */
     protected dropViewSql(viewOrPath: View|string): Query {
-        return new Query(`DROP VIEW ${this.escapePath(viewOrPath)}`);
+        return new Query(`DROP VIEW IF EXISTS ${this.escapePath(viewOrPath)}`);
     }
 
     /**
